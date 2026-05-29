@@ -1,0 +1,131 @@
+@import 'normal';
+
+.classic-theme:extend(.normal-theme all) {
+  --border-width: 6px;
+  --border-rotation: -45deg;
+  --auto-width: 450px;
+
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        var(--border-rotation),
+        var(--border-1),
+        var(--border-2)
+      );
+      mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      mask-composite: exclude;
+      border-radius: 12px;
+      padding: var(--border-width);
+    }
+
+    .player-stats {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .widget {
+      padding: 12px;
+
+      .level {
+        display: flex;
+        align-items: center;
+      }
+
+      .matches {
+        text-align: center;
+
+        small {
+          font-size: 0.75em;
+        }
+
+        .stats {
+          display: flex;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        border-radius: 0;
+        background: var(--background);
+        z-index: -2;
+        opacity: var(--background-opacity, 1);
+      }
+
+      &.banner::before {
+        border-radius: 6px;
+      }
+    }
+
+    .progress-bar {
+      margin: 10px auto auto auto;
+      width: 100%;
+      border-radius: 5px;
+      background: var(--background);
+      border: 1px solid var(--border-1);
+
+      .progress {
+        border-radius: 5px;
+        height: 5px;
+        transition: 1s;
+      }
+    }
+
+    .player-stats {
+      .stat.green {
+        border: 1px solid var(--wins);
+        background: linear-gradient(0deg, #0000, var(--background-wins));
+      }
+
+      .stat.red {
+        border: 1px solid var(--losses);
+        background: linear-gradient(0deg, #0000, var(--background-losses));
+      }
+    }
+
+    .average {
+      display: flex;
+
+      .stat {
+        flex: 1;
+        justify-content: space-between;
+        padding: 1px 8px;
+        border-right: var(--stats-separator-width, 2px) solid
+          var(--stats-separator-color, var(--border-1));
+        display: flex;
+      }
+
+      .stat p:first-child {
+        margin-right: 8px;
+      }
+
+      .stat:last-child {
+        border-right: none;
+      }
+    }
+  }
+}

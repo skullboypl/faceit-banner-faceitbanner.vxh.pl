@@ -1,0 +1,129 @@
+@import 'normal';
+
+.horizon-theme:extend(.normal-theme all) {
+  --auto-width: 520px;
+  --radius: 16px;
+
+  * {
+    margin: 0; padding: 0;
+    font-family: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: var(--text);
+  }
+
+  .wrapper { position: relative; border-radius: var(--radius); }
+
+  /* Rejestr animowalnej zmiennej kąta (bezpieczne; fallback = statyczny) */
+  @property --h-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  .widget {
+     overflow: hidden;
+    position: relative;
+    padding: 16px;
+    border-radius: 10px;
+
+    /* Gradientowy border bez masek: 2 tła + przezroczysta ramka */
+    border: 2px solid transparent;
+   background:
+  /* wypełnienie z alfa */
+  linear-gradient(
+    180deg,
+    rgba(11, 15, 22, var(--background-opacity,1)) 0%,
+    rgba(10, 13, 20, var(--background-opacity,1)) 100%
+  ) padding-box,
+  conic-gradient(
+    from var(--h-angle) at 50% 50%,
+    rgba(255,   0,   0, var(--background-opacity,1)) 0deg,
+    rgba(128, 255,   0, var(--background-opacity,1)) 90deg,
+    rgba( 51,   0, 255, var(--background-opacity,1)) 180deg,
+    rgba(255,   0, 195, var(--background-opacity,1)) 280deg,
+    rgba(255,   0,  43, var(--background-opacity,1)) 360deg
+  ) border-box;
+
+  /* animowany border */
+
+
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,.04) inset,
+      0 18px 48px rgba(0,0,0,.55);
+
+    /* Animacja kąta (fallback: brak animacji => border statyczny) */
+    animation: horizon-rotate 3s linear infinite;
+  }
+
+  @keyframes horizon-rotate { to { --h-angle: 360deg; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .widget { animation: none; }
+  }
+
+  .player-stats {
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+
+    .level {
+      display:flex; align-items:center; gap:12px;
+      svg.faceit-level { @size: 86px; width:@size; height:@size; }
+      .elo {
+        h2 { font-size: 1.15rem; margin-bottom: 4px; }
+        .ranking { color: var(--wins); font-weight: 800; }
+      }
+    }
+
+    .matches .stats {
+      display:flex; gap:8px;
+      .stat {
+        border-radius: 12px; padding: 8px 12px;
+        background: rgba(255,255,255,.04);
+        box-shadow: 0 1px 0 rgba(255,255,255,.04) inset, 0 10px 26px rgba(0,0,0,.45);
+      }
+      .stat.green { box-shadow: 0 0 0 1px color-mix(in srgb, var(--wins) 50%, transparent), 0 10px 26px rgba(0,0,0,.45); }
+      .stat.red   { box-shadow: 0 0 0 1px color-mix(in srgb, var(--losses) 50%, transparent), 0 10px 26px rgba(0,0,0,.45); }
+    }
+  }
+
+  .average {
+    margin-top:10px;
+    display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:8px;
+
+    .stat {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:8px 12px; border-radius:12px;
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 1px 0 rgba(255,255,255,.04) inset;
+    }
+
+    @media (max-width:520px){ grid-template-columns: repeat(2,minmax(0,1fr)); }
+  }
+
+  /* Pasek postępu z delikatną „falą” – zostaje jak wcześniej */
+  .progress-bar {
+    margin-top:12px; width:100%; height:8px; border-radius:999px; overflow:hidden;
+    background: rgba(255,255,255,.06);
+
+    .progress {
+      height:100%; position: relative;
+      background: linear-gradient(90deg, var(--wins), var(--losses));
+      transition: width .7s ease;
+    }
+
+    .progress::after {
+      content:''; position:absolute; left:-100%; top:0; bottom:0; width: 100%;
+      background: radial-gradient(rgba(255,255,255,.6) 0, transparent 80%);
+      animation: wave 6s linear infinite;
+      mix-blend-mode: screen;
+    }
+  }
+
+  @keyframes wave {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .progress-bar .progress { transition: none; }
+    .progress-bar .progress::after { animation: none; }
+  }
+}

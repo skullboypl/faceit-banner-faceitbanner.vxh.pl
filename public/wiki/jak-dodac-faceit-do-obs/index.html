@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jak dodac banner FACEIT do OBS krok po kroku</title>
+    <meta
+      name="description"
+      content="Instrukcja krok po kroku: jak dodac banner FACEIT do OBS Studio jako Browser Source, ustawic rozmiar i odswiezanie."
+    />
+    <link rel="canonical" href="https://faceitbanner.vxh.pl/wiki/jak-dodac-faceit-do-obs/" />
+    <link rel="stylesheet" href="/wiki/wiki.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="card">
+        <span class="kicker">Instrukcja</span>
+        <h1>Jak dodac banner FACEIT do OBS</h1>
+        <p>
+          Ponizej znajdziesz proces wdrozenia od zera, tak aby banner byl stabilny i czytelny
+          podczas streama turniejowego lub rankingu.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Krok 1: konfiguracja linku</h2>
+        <ol>
+          <li>Otworz generator i wpisz nickname FACEIT.</li>
+          <li>Ustaw statystyki, ktore chcesz pokazywac.</li>
+          <li>Dopasuj styl i kolory pod overlay.</li>
+          <li>Kliknij generowanie i skopiuj URL widzetu.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>Krok 2: Browser Source w OBS</h2>
+        <ol>
+          <li>W scenie wybierz Add -> Browser Source.</li>
+          <li>Wklej wygenerowany URL.</li>
+          <li>Ustaw rozmiar, np. szerokosc okolo 500 px.</li>
+          <li>Ustaw odswiezanie z rozwaga, aby nie obciazac transmisji.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>Krok 3: test i optymalizacja</h2>
+        <p>
+          Sprawdz widocznosc tekstu na jasnych i ciemnych mapach. Jezeli banner jest zbyt kontrastowy,
+          zmniejsz nasycenie tla lub zwieksz rozmycie. Przed live zrob test w prywatnej scenie.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Pozostałe artykuły</h2>
+        <div class="nav-grid">
+          <a href="/wiki/bannerfaceit/">Banner FACEIT do OBS</a>
+          <a href="/wiki/konfiguracja-widzetu-faceit/">Konfiguracja widżetu FACEIT</a>
+          <a href="/wiki/faq-faceit-widget/">FAQ i rozwiązywanie problemów</a>
+          <a href="/wiki/">Wróć do wiki</a>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

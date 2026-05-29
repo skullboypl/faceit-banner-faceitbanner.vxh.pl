@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAQ FACEIT Widget - najczestsze pytania i rozwiazania</title>
+    <meta
+      name="description"
+      content="FAQ dla FACEIT Stats Widget: najczestsze pytania o OBS, odswiezanie danych, ranking i problemy z wyswietlaniem banera."
+    />
+    <link rel="canonical" href="https://faceitbanner.vxh.pl/wiki/faq-faceit-widget/" />
+    <link rel="stylesheet" href="/wiki/wiki.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Dlaczego ranking nie wyswietla sie od razu?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ranking zalezy od danych API. Sprawdz czy gracz ma dostepna pozycje rankingowa i czy tryb rankingu jest wlaczony w ustawieniach."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Jaka szerokosc Browser Source ustawic w OBS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Najczesciej sprawdza sie okolica 500 px, ale docelowy rozmiar zalezy od layoutu i rozdzielczosci sceny."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy strony wiki dzialaja bez Node.js na hostingu?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak. Podstrony wiki sa statycznym HTML i moga byc serwowane na zwyklym Apache z plikami robots.txt, sitemap.xml i .htaccess."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <section class="card">
+        <span class="kicker">FAQ</span>
+        <h1>Najczestsze pytania o FACEIT Stats Widget</h1>
+      </section>
+
+      <section class="card">
+        <h2>Dlaczego nie widze wszystkich statystyk?</h2>
+        <p>
+          Czesc statystyk jest liczona z ostatnich meczow. Gdy API nie zwroci danych dla wybranej metryki,
+          pole moze pozostac puste. Warto zwiekszyc liczbe meczow do obliczen i sprawdzic ponownie.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Czy ten widget obciaza stream?</h2>
+        <p>
+          Browser Source ma niski koszt, ale czestotliwosc odswiezania ma znaczenie. Dla stabilnosci
+          streama najlepiej ustawic odswiezanie dopasowane do potrzeb zamiast bardzo agresywnych interwalow.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Czy wiki jest gotowe pod Google?</h2>
+        <p>
+          Tak. Podstrony maja unikalne tytuly, opisy, canonicale, wewnetrzne linkowanie oraz wspierajace
+          pliki robots.txt i sitemap.xml.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Pozostałe artykuły</h2>
+        <div class="nav-grid">
+          <a href="/wiki/bannerfaceit/">Banner FACEIT do OBS</a>
+          <a href="/wiki/jak-dodac-faceit-do-obs/">Jak dodać widget do OBS</a>
+          <a href="/wiki/konfiguracja-widzetu-faceit/">Konfiguracja widżetu FACEIT</a>
+          <a href="/wiki/">Wróć do wiki</a>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

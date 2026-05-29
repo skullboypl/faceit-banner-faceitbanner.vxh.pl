@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.github
+.idea
+.env
+.env.*
+*.env
+SAMPLE
+README.md
+*.md
+!public/**

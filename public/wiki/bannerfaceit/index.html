@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Banner FACEIT do OBS - kompletny przewodnik</title>
+    <meta
+      name="description"
+      content="Banner FACEIT do OBS: szczegolowy opis jak dziala generator, jakie dane pobiera i jak poprawnie wdrozyc widzet na streamie."
+    />
+    <link rel="canonical" href="https://faceitbanner.vxh.pl/wiki/bannerfaceit/" />
+    <link rel="stylesheet" href="/wiki/wiki.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="card">
+        <span class="kicker">FACEIT + OBS</span>
+        <h1>Banner FACEIT do OBS</h1>
+        <p>
+          Ta strona opisuje cale rozwiazanie FACEIT Stats Widget od strony praktycznej i technicznej.
+          Generator pozwala zbudowac banner, ktory pokazuje m.in. ELO, level, ranking region/kraj i
+          srednie statystyki z wybranej liczby meczow.
+        </p>
+        <a class="cta" href="/">Przejdz do generatora</a>
+      </section>
+
+      <section class="card">
+        <h2>Dlaczego to rozwiazanie jest przydatne na streamie?</h2>
+        <p>
+          Widzowie szybciej rozumieja twoj progres, bo maja stale widoczny aktualny status FACEIT.
+          Nie musisz co chwila przelaczac scen, pokazywac profilu recznie ani tlumaczyc podstawowych danych.
+          Wszystko jest dostepne od razu na overlayu.
+        </p>
+        <p>
+          Widzet dziala jako Browser Source, wiec aktualizacja zawartosci nie wymaga dodatkowych pluginow.
+          Wystarczy raz dodac link i ustawic odswiezanie zgodnie z potrzebami transmisji.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Co mozesz pokazac na bannerze FACEIT?</h2>
+        <ul>
+          <li>ELO oraz zmiane ELO po meczach.</li>
+          <li>Poziom konta i opcjonalne ikony statusu.</li>
+          <li>Ranking regionalny (EU) i ranking krajowy.</li>
+          <li>Statystyki slotow 1-4 z wybranego zakresu meczow, np. K/D, ADR, K/R, MVP, asysty.</li>
+          <li>Avatar lub banner gracza jako tlo, z regulacja czytelnosci.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>SEO, indeksacja i gotowosc pod Google</h2>
+        <p>
+          Podstrona jest statycznym HTML-em z unikalnym tytulem, opisem i canonicalem. Taka forma dziala
+          jak pre-render (SSR-like output) i jest czytelna dla crawlerow bez wykonywania JavaScript.
+        </p>
+        <p>
+          Dodatkowo projekt zawiera sitemap.xml oraz robots.txt, co pomaga robotom szybciej odnalezc
+          i indeksowac cala sekcje wiki.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Pozostałe artykuły</h2>
+        <div class="nav-grid">
+          <a href="/wiki/jak-dodac-faceit-do-obs/">Jak dodać widget do OBS</a>
+          <a href="/wiki/konfiguracja-widzetu-faceit/">Konfiguracja widżetu FACEIT</a>
+          <a href="/wiki/faq-faceit-widget/">FAQ i rozwiązywanie problemów</a>
+          <a href="/wiki/">Wróć do wiki</a>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

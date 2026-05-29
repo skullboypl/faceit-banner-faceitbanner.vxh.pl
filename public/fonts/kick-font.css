@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'KickFont';
+  src: url('/fonts/kick-font.otf.woff2/kick-font.otf.woff2') format('woff2'),
+       url('/fonts/kick-font.ttf/kick-font.ttf') format('truetype'),
+       url('/fonts/kick-font.otf/kick-font.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,28 @@
+# syntax=docker/dockerfile:1
+
+FROM node:22-alpine AS build
+
+WORKDIR /app
+
+RUN corepack enable && corepack prepare pnpm@9 --activate
+
+COPY package.json pnpm-lock.yaml ./
+
+RUN pnpm install --frozen-lockfile
+
+COPY . .
+
+# CapRover: ustaw VITE_FACEIT_API_KEY w App Configs (trafia jako build-arg)
+ARG VITE_FACEIT_API_KEY=
+ENV VITE_FACEIT_API_KEY=${VITE_FACEIT_API_KEY}
+
+RUN pnpm run build
+
+FROM nginx:1.27-alpine
+
+COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

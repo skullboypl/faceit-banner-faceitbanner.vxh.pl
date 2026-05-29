@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Legacy SEO URL redirect
+RewriteRule ^bannerfaceitobs/?$ /wiki/bannerfaceit/ [R=301,L]
+
+# Serve real files/directories directly (important for static wiki pages)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA fallback for React routes
+RewriteRule ^ index.html [L]

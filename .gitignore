@@ -1,0 +1,10 @@
+.idea
+.vscode/
+dist
+package-lock.json
+node_modules
+.env
+.env.*
+!.env.example
+*.iml
+SAMPLE/*

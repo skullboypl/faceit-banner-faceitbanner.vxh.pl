@@ -1,0 +1,69 @@
+@import 'normal';
+
+.justeloname-theme:extend(.normal-theme all) {
+  --auto-width: 120px;
+  .widget {
+    padding: 8px 10px !important;
+
+    .level {
+      align-items: center;
+      flex: 1;
+
+      svg {
+        @size: 35px;
+        width: @size !important;
+        height: @size !important;
+        margin-right: 12px;
+      }
+
+      .elo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        .ranking{
+            display: none;
+        }
+        h2 {
+          margin-left: 6px;
+          margin-right: 6px;
+          margin-bottom: 1px;
+        }
+
+        h2,
+        p {
+          font-size: 1em !important;
+        }
+      }
+    }
+
+    .matches {
+        display: none;
+    }
+
+    .player-stats {
+      .stat {
+        @size: 30px;
+        border-radius: 8px;
+
+        width: @size;
+        height: @size;
+
+        p {
+          font-weight: normal;
+          font-size: 0.8em;
+        }
+      }
+    }
+
+    .progress-bar {
+        display: none;
+    }
+
+    .average .stat {
+        display: none;
+    }
+
+    border-radius: 12px;
+  }
+}
