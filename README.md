@@ -1,8 +1,16 @@
+<div align="center">
+
 # FACEIT Stats Widget (Skull)
 
-Widget dla **[OBS Studio](https://obsproject.com/)** wyświetlający statystyki **[FACEIT](https://faceit.com)** (ELO, poziom, zmiana ELO, średnie statystyki).
+![Podgląd widgetu](.github/assets/preview.png)
+
+Pochodna rozszerzona wersja oryginału: [**mxgic1337/faceit-stats-widget**](https://github.com/mxgic1337/faceit-stats-widget) · [generator oryginału](https://widget.mxgic1337.xyz/)
 
 **Live:** [faceitbanner.vxh.pl](https://faceitbanner.vxh.pl/)
+
+</div>
+
+Widget dla **[OBS Studio](https://obsproject.com/)** wyświetlający statystyki **[FACEIT](https://faceit.com)** (ELO, poziom, zmiana ELO, średnie statystyki).
 
 Ten projekt **nie jest powiązany** z FACEIT.
 
@@ -17,8 +25,6 @@ Zgodnie z MIT, w dystrybucji zachowujemy oryginalne informacje o prawach autorsk
 | Oryginał | [github.com/mxgic1337/faceit-stats-widget](https://github.com/mxgic1337/faceit-stats-widget) |
 | Ta wersja | [github.com/skullboypl/faceit-banner-faceitbanner.vxh.pl](https://github.com/skullboypl/faceit-banner-faceitbanner.vxh.pl) |
 | Autor modyfikacji | [Skull](https://github.com/skullboypl) |
-
-Ikony Tabler (jeśli używane w projekcie) — zobacz [LICENSE-TABLER-ICONS](./LICENSE-TABLER-ICONS).
 
 ## Stack technologiczny
 
