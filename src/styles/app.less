@@ -225,7 +225,48 @@ footer {
     display: flex;
     flex-direction: column;
 
-    &:last-child { text-align: right; }
+    &:last-child {
+      text-align: right;
+      align-items: flex-end;
+      gap: 8px;
+    }
+  }
+}
+
+.footer-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid @surface0;
+  background: fade(@mantle, 80%);
+  color: @subtext0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease,
+    transform 0.15s ease;
+
+  .icon-github {
+    flex-shrink: 0;
+    opacity: 0.9;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: @text;
+    border-color: @surface1;
+    background: @mantle;
+    transform: translateY(-1px);
+  }
+
+  &:hover .icon-github,
+  &:focus-visible .icon-github {
+    opacity: 1;
   }
 }
 
