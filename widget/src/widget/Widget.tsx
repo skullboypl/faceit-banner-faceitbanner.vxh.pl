@@ -374,19 +374,12 @@ export const Widget = ({
   /* Update player stats */
   useEffect(() => {
     if (preview) return;
-    console.log(
-      `%cWidget settings:%c\n%o`,
-      'font-weight: bold;',
-      '',
-      SETTINGS.settings
-    );
     let startDate = new Date();
     const savedStartDate = localStorage.getItem('fcw_session_start');
     const savedPlayerId = localStorage.getItem('fcw_session_player-id');
     const saveSession = SETTINGS.get('saveSession');
     const playerId = SETTINGS.get('playerId');
     if (saveSession && savedStartDate && savedPlayerId === playerId) {
-      console.log('Loaded starting date from session.');
       startDate = new Date(savedStartDate);
     }
     if (!playerId) {
@@ -425,8 +418,6 @@ export const Widget = ({
               expired = true;
             }
             if (expired) {
-              /* Save saved session data */
-              console.log('Session expired. Saving new data...');
               localStorage.setItem(
                 'fcw_session_starting-elo',
                 String(player.elo)
