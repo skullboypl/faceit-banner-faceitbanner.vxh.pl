@@ -12,8 +12,8 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 
-# CapRover: ustaw VITE_FACEIT_API_KEY w App Configs (trafia jako build-arg)
-ARG VITE_FACEIT_API_KEY=
+# CapRover App Configs → VITE_FACEIT_API_KEY (dostępne przy docker build)
+ARG VITE_FACEIT_API_KEY=${VITE_FACEIT_API_KEY}
 ENV VITE_FACEIT_API_KEY=${VITE_FACEIT_API_KEY}
 
 RUN pnpm run build
